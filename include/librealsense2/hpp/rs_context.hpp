@@ -199,6 +199,13 @@ namespace rs2
             rs2::error::handle(e);
         }
 
+		void clear_devices()
+		{
+			rs2_error* e = nullptr;
+			rs2_context_clear_devices(_context.get(), &e);
+			rs2::error::handle(e);
+		}
+
         void unload_tracking_module()
         {
             rs2_error* e = nullptr;

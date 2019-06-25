@@ -567,6 +567,13 @@ namespace librealsense
     }
 #endif
 
+	void context::clear_devices()
+	{
+		auto prev_playback_devices = _playback_devices;
+		_playback_devices.clear();
+		on_device_changed({}, {}, prev_playback_devices, _playback_devices);
+	}
+
     std::vector<std::vector<platform::uvc_device_info>> group_devices_by_unique_id(const std::vector<platform::uvc_device_info>& devices)
     {
         std::map<std::string, std::vector<platform::uvc_device_info>> map;

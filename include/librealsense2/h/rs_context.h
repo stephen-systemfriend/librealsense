@@ -72,6 +72,14 @@ void rs2_context_add_software_device(rs2_context* ctx, rs2_device* dev, rs2_erro
 void rs2_context_remove_device(rs2_context* ctx, const char* file, rs2_error** error);
 
 /**
+ * Removes all the playback devices from the context
+ * \param[in]  ctx       The context from which the device should be removed
+ * \param[out] error     If non-null, receives any error that occurs during this call, otherwise, errors are ignored
+ */
+void rs2_context_clear_devices(rs2_context* ctx, rs2_error** error);
+
+
+/**
  * Removes tracking module.
  * function query_devices() locks the tracking module in the tm_context object. 
  * If the tracking module device is not used it should be removed using this function, so that other applications could find it.

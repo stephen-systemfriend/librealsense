@@ -139,6 +139,13 @@ namespace Intel.RealSense
             NativeMethods.rs2_context_remove_device(Handle, file, out error);
         }
 
+        /// <summary>Removes all the playback devices from the context</summary>
+        public void ClearDevices()
+        {
+            object error;
+            NativeMethods.rs2_context_clear_devices(Handle, out error);
+        }
+
         private void OnDevicesChangedInternal(IntPtr removedList, IntPtr addedList, IntPtr userData)
         {
             var e = OnDevicesChangedEvent;

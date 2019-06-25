@@ -136,6 +136,8 @@ namespace librealsense
         void unload_tracking_module();
 #endif
 
+		void clear_devices();
+
     private:
         void on_device_changed(platform::backend_device_group old,
                                platform::backend_device_group curr,
